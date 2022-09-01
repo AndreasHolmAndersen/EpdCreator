@@ -79,3 +79,16 @@ export async function getStageStateEnum() {
      }
     }
 }
+
+export async function getStageTypeEnum()  {
+    const response = await apiClient.get('api/Material/stagetypeenum')
+
+    if (response.status === 200) {
+        return response.data 
+    } else {
+         return {
+            status: response.status,
+            message: response.statusText
+        }
+      }
+  }
